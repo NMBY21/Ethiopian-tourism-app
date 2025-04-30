@@ -22,5 +22,13 @@ export const destinations = [
     description: 'Home to many indigenous tribes and cultural heritage.',
     region: 'SNNPR',
     category: 'Cultural'
+  },
+  {
+    id: 4,
+    name: 'Omo Valley',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/Omo_Valley_people.jpg',
+    description: 'Home to many indigenous tribes and cultural heritage.',
+    region: 'SNNPR',
+    category: 'Cultural'
   }
 ];

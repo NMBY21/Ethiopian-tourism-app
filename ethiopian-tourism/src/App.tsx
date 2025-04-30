@@ -9,8 +9,9 @@ function App() {
     <main className="min-h-screen bg-amber-50">
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/destination/:id" element={<DestinationDetail />} />
+        {/* <Route path="/destination/:id" element={<DestinationDetail />} /> */}
         <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="/destination/:name" element={<DestinationDetail />} />
       </Routes>
     </main>
   );
