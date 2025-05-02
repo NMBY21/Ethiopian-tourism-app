@@ -1,56 +1,43 @@
-import { useState } from "react";
+import React from "react";
 
-type FiltersProps = {
+type Props = {
   onSearch: (text: string) => void;
   onRegionChange: (region: string) => void;
   onCategoryChange: (category: string) => void;
 };
 
-function Filters({ onSearch, onRegionChange, onCategoryChange }: FiltersProps) {
-  const [search, setSearch] = useState("");
-
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setSearch(value);
-    onSearch(value);
-  };
-
+function Filters({ onSearch, onRegionChange, onCategoryChange }: Props) {
   return (
-    <div className="flex flex-col md:flex-row gap-4 p-4">
+    <div className="p-4 bg-white shadow-md rounded-md flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
       {/* 🔍 Search */}
       <input
         type="text"
-        placeholder="Search destinations..."
-        value={search}
-        onChange={handleSearchChange}
-        className="p-2 border rounded w-full md:w-1/3"
+        placeholder="Search destination..."
+        onChange={(e) => onSearch(e.target.value)}
+        className="border border-gray-300 rounded-md px-4 py-2 w-full sm:w-64"
       />
 
-      {/* 🌍 Region */}
+      {/* 🌍 Region Filter */}
       <select
         onChange={(e) => onRegionChange(e.target.value)}
-        className="p-2 border rounded w-full md:w-1/3"
-        defaultValue=""
+        className="border border-gray-300 rounded-md px-4 py-2"
       >
         <option value="">All Regions</option>
         <option value="Amhara">Amhara</option>
-        <option value="Oromia">Oromia</option>
         <option value="Tigray">Tigray</option>
+        <option value="Oromia">Oromia</option>
         <option value="SNNPR">SNNPR</option>
-        {/* Add more regions */}
       </select>
 
-      {/* 🗂️ Category */}
+      {/* 🗂️ Category Filter */}
       <select
         onChange={(e) => onCategoryChange(e.target.value)}
-        className="p-2 border rounded w-full md:w-1/3"
-        defaultValue=""
+        className="border border-gray-300 rounded-md px-4 py-2"
       >
         <option value="">All Categories</option>
         <option value="Nature">Nature</option>
-        <option value="History">History</option>
-        <option value="Culture">Culture</option>
-        {/* Add more categories */}
+        <option value="Historical">Historical</option>
+        <option value="Religious">Religious</option>
       </select>
     </div>
   );

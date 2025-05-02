@@ -40,11 +40,19 @@ function DestinationCard({
             </h2>
           </Link>
           <p className="text-sm text-gray-600 mt-1">{description}</p>
-          <div className="text-xs text-gray-500 mt-2">
+          {/* <div className="text-xs text-gray-500 mt-2">
             {region} | {category}
-          </div>
+          </div> */}
         </div>
-
+        <div className="text-xs text-gray-500 mt-2">
+          <Link to={`/region/${region}`} className="hover:underline text-blue-600">
+            {region}
+          </Link>{" "}
+          |{" "}
+          <Link to={`/category/${category}`} className="hover:underline text-blue-600">
+            {category}
+          </Link>
+        </div>
         <button
           onClick={handleFavorite}
           className={`mt-4 py-1 px-3 text-sm font-medium rounded ${
