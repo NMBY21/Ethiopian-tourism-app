@@ -16,6 +16,7 @@ function App() {
          <Route path="/destination/:name" element={<DestinationDetail />} />
           <Route path="/region/:regionName" element={<HomePage />} />
           <Route path="/category/:categoryName" element={<HomePage />} />
+          <Route path="/region/:regionName/category/:categoryName" element={<HomePage />} />
        </Routes>
     </main>
   );
